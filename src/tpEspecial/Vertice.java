@@ -6,12 +6,16 @@ public class Vertice {
 	private boolean visitado = false;
 	private boolean terminado = false;
 	private int grado;
-	private ArrayList<Vertice> adyacentes = new ArrayList<Vertice>();
+	public ArrayList<Vertice> adyacentes = new ArrayList<Vertice>();
 	
 	public int getGrado() {
 		return grado;
 	}
 
+	public boolean equals(Object o){
+		return ((Vertice)o).getEtiqueta() == etiqueta;
+	}
+	
 	public boolean isVisitado() {
 		return visitado;
 	}
@@ -36,8 +40,19 @@ public class Vertice {
 	}
 	
 	public void addAdyacente(Vertice v){
-		this.adyacentes.add(v);
-		grado++;
+		
+		if(!tieneAdyacente(v)){
+			this.adyacentes.add(v);
+			grado++;			
+		}
+	}
+	
+	public boolean tieneAdyacente(Vertice ve){
+		for(Vertice v : adyacentes)
+			if(v.equals(ve)){
+				return true;
+		}
+	return false;
 	}
 
 	public Vertice(int etiqueta){
@@ -54,6 +69,9 @@ public class Vertice {
 
 	public void setEtiqueta(int etiqueta) {
 		this.etiqueta = etiqueta;
+	}
+	public String toString(){
+		return ((Integer) this.etiqueta).toString();
 	}
 	
 	public void printAdyacentes (){
