@@ -6,7 +6,7 @@ public class Vertice {
 	private boolean visitado = false;
 	private boolean terminado = false;
 	private int grado;
-	public ArrayList<Vertice> adyacentes = new ArrayList<Vertice>();
+	private ArrayList<Vertice> adyacentes = new ArrayList<Vertice>();
 	
 	public int getGrado() {
 		return grado;
