@@ -3,7 +3,7 @@ package tpEspecial;
 import java.util.ArrayList;
 
 public class GrafoDirigido {
-	public ArrayList<Vertice> vertices = new ArrayList<Vertice>();
+	private ArrayList<Vertice> vertices = new ArrayList<Vertice>();
 
 
 	public void addVertice(int i) {
